@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 
-export default function PostDetailScreen() {
+export default function PostDetail() {
   const { title, content } = useLocalSearchParams();
 
   return (

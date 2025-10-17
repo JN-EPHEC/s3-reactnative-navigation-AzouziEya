@@ -29,12 +29,12 @@ const POSTS = [
   },
 ];
 
-export default function PostListScreen() {
+export default function PostList() {
   const router = useRouter();
 
   function handlePress(item: typeof POSTS[number]) {
     router.push({
-      pathname: "/screens/PostDetailScreen",
+      pathname: "/PostDetail",
       params: { title: item.title, content: item.content },
     });
   }

@@ -1,16 +1,12 @@
-import "react-native-reanimated";
-
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import PostListScreen from "./screens/PostListScreen";
-import PostDetailScreen from "./screens/PostDetailScreen";
-
-export type RootStackParamList = {
-  PostList: undefined;
-  PostDetail: { postId: string; title: string; content: string };
-};
+import { Drawer } from "expo-router/drawer";
 
 export default function RootLayout() {
-  const Stack = createNativeStackNavigator<RootStackParamList>();
-
-  return <>{/* Your code here for the stack navigator */}</>;
+  return (
+    <Drawer>
+      <Drawer.Screen name="courses/stack/CourseList" options={{ drawerLabel: "Liste des cours", title: "Liste des cours" }} />
+      <Drawer.Screen name="screens/PostListScreen" options={{ drawerLabel: "Posts du blog", title: "Posts du blog" }} />
+      <Drawer.Screen name="profile/ProfileScreen" options={{ drawerLabel: "Mon Profil", title: "Mon Profil" }} />
+      <Drawer.Screen name="courses/tabs/Wishlist" options={{ drawerLabel: "Wishlist", title: "Wishlist" }} />
+    </Drawer>
+  );
 }
